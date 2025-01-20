@@ -1,0 +1,50 @@
+import React, {useState} from 'react';
+import {Text, StyleSheet} from 'react-native';
+import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
+
+const TextInANest = () => {
+  const [titleText, setTitleText] = useState("Amiel Howard L. Along");
+  const bodyText =    <Text style={styles.baseText}>On our sysarc we strugle about our group some of my group are not active and luck of communication and luck of time but now <Text style={styles.innerText}>i learn about what i do next</Text> and as a programer of our group i want to do more better in this sem. <Text style={styles.innerText}>In this sem i want to practice more about front and back end</Text> and i make sure that im more <Text style={styles.innerText}>prepered now.</Text>
+ </Text>
+
+  const onPressTitle = () => {
+    setTitleText("It - 301");
+  };
+
+  return (
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.baseText}>
+          <Text style={styles.titleText} onPress={onPressTitle}>
+            {titleText}
+            {'\n'}
+            {'\n'}
+          </Text>
+          <Text numberOfLines={5}>{bodyText}</Text>
+        </Text>
+      </SafeAreaView>
+    </SafeAreaProvider>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  baseText: {
+    fontFamily: 'Cochin',
+    textAlign: 'center',
+    fontSize: 15,
+    margin: 10,
+    fontWeight: 'bold'
+  },
+  titleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  innerText: {
+    color: 'red',
+  },
+});
+
+export default TextInANest;
